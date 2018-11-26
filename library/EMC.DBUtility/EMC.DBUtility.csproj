@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{896C38A2-FDBF-42CE-88BA-57028829DEF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMC.DBUtility</RootNamespace>
+    <AssemblyName>EMC.DBUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5">
+      <HintPath>..\dll\MySql.Data.Entity.EF5.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\dll\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>..\dll\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web">
+      <HintPath>..\dll\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicExecuteExtensions.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Common\DataTableAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\DbExecuteContextBase.cs" />
+    <Compile Include="Common\DbExecutorBase.cs" />
+    <Compile Include="Common\DbTransactionContextBase.cs" />
+    <Compile Include="Common\IDbProvider.cs" />
+    <Compile Include="Common\IParameterizedQueryParser.cs" />
+    <Compile Include="Common\ParameterizedQueryLiteralValueParser.cs" />
+    <Compile Include="Common\ParameterizedQueryParser.cs" />
+    <Compile Include="Common\XmlDocumentValueConverter.cs" />
+    <Compile Include="DataSetExtensions.cs" />
+    <Compile Include="Db.cs" />
+    <Compile Include="DbConfiguration.cs" />
+    <Compile Include="DbExecutableQuery.cs" />
+    <Compile Include="DbTracing.cs" />
+    <Compile Include="DbValueConverter.cs" />
+    <Compile Include="DefaultConverter.cs" />
+    <Compile Include="DynamicExtensions.cs" />
+    <Compile Include="EntityConvertAttribute.cs" />
+    <Compile Include="EntityExtensions.cs" />
+    <Compile Include="IDbExecutableQuery.cs" />
+    <Compile Include="IDbExecuteContext.cs" />
+    <Compile Include="IDbExecutor.cs" />
+    <Compile Include="IDbQuery.cs" />
+    <Compile Include="IDbTraceService.cs" />
+    <Compile Include="IDbTracing.cs" />
+    <Compile Include="IDbTransactionContext.cs" />
+    <Compile Include="IDbTransactionProvider.cs" />
+    <Compile Include="IDbValueConverter.cs" />
+    <Compile Include="MySqlClient\MySqlDbConfiguration.cs" />
+    <Compile Include="MySqlClient\MySqlDbExecutor.cs" />
+    <Compile Include="MySqlClient\MySqlDbTransactionContext.cs" />
+    <Compile Include="MySqlClient\MySqlExecuteContext.cs" />
+    <Compile Include="MySqlClient\MySqlParameterizedQueryParser.cs" />
+    <Compile Include="MySqlDb.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\IParameterizedQueryPartial.cs" />
+    <Compile Include="Queries\ParameterizedQuery.cs" />
+    <Compile Include="Queries\ParameterizedQueryBuilder.cs" />
+    <Compile Include="Queries\StoredProcedureQuery.cs" />
+    <Compile Include="Queries\TemplateParser.cs" />
+    <Compile Include="SqlClient\SqlDbConfiguration.cs" />
+    <Compile Include="SqlClient\SqlDbExecuteContext.cs" />
+    <Compile Include="SqlClient\SqlDbExecutor.cs" />
+    <Compile Include="SqlClient\SqlDbTransactionContext.cs" />
+    <Compile Include="SqlClient\SqlParameterizedQueryParser.cs" />
+    <Compile Include="SqlServer.cs" />
+    <Compile Include="SqlServerExpress.cs" />
+    <Compile Include="TemplateExtensions.cs" />
+    <Compile Include="TransactionExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
